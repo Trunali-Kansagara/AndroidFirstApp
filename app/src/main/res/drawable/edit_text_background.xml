@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Rounded corners and transparent background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="1dp"
+                android:color="@android:color/darker_gray" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Bottom green line (shortened to avoid corners) -->
+    <item android:left="8dp" android:right="8dp" android:top="49dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/button_green" />
+            <size android:height="2dp" />
+        </shape>
+    </item>
+</layer-list>

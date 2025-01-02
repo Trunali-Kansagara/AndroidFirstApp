@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FirstApp</string>
+    <string-array name="password_types">
+        <item>Password</item>
+        <item>Grant Type Password</item>
+    </string-array>
+    <string name="warning_icon">By Using Grant Type Password you will not be able to use User Management</string>
+</resources>

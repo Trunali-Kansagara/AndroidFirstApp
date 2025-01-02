@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <!-- App Icon -->
+
+
+    <!-- Title -->
+    <Toolbar
+        android:id="@+id/headerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="10dp"
+
+
+        >
+
+        <ImageView
+            android:id="@+id/passwordDropdown"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/key"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/urlInput" />
+
+        <TextView
+
+            android:id="@+id/title"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </Toolbar>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/formLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerView"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="16dp"
+        >
+
+        <!-- EditText for URL Input -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/urlInput"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edit_text_background"
+            android:drawablePadding="8dp"
+            android:hint="http://192.168.15.64"
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintEnd_toStartOf="@+id/searchIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+
+            />
+        <!-- Green Bottom Line -->
+
+
+        <!-- ImageView for Search Icon -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_button"
+            android:contentDescription="@string/app_name"
+            android:padding="12dp"
+
+            android:src="@drawable/search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Password Dropdown -->
+
+    <Spinner
+        android:id="@+id/sp_password_type"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_spinner"
+        android:entries="@array/password_types"
+
+        android:paddingStart="8dp"
+    android:paddingRight="16dp"
+        android:popupBackground="#FFFFFF"
+        android:textColor="#888888"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/formLayout" />
+
+    <!-- Warning Text -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tv_warning"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sp_password_type" >
+        <ImageView
+            android:id="@+id/warningIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/warning"
+        android:contentDescription="@string/warning_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+        <TextView
+            android:id="@+id/warningText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="By Using Grant Type Password you will not be able to use User Management"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/warningIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Input Fields -->
+    <LinearLayout
+        android:id="@+id/ll_inputs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_warning"
+
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="admin@cpi.com"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="#888888"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="Admin@123"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="#888888"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="9a117930b324f3c0847...."
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="#888888"
+            android:textSize="16sp"
+
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit_text"
+            android:hint="K8REuZ3..."
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="#888888"
+            android:textSize="16sp"
+
+            />
+    </LinearLayout>
+
+    <!-- Authorize Button -->
+
+    <Button
+        android:id="@+id/btn_authorize"
+        android:layout_width="269dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="84dp"
+        android:background="@drawable/bg_authorize_button"
+        android:backgroundTint="#4CAF50"
+        android:gravity="center"
+        android:text="Authorize"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_inputs" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
